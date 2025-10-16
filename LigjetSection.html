@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row-start-7 row-span-4 col-start-2 col-span-8">
+      <h1
+        class="mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white"
+      >
+        Ligjet dhe
+        <span
+          class="underline underline-offset-1 decoration-4 decoration-blue-300"
+          >informacionet ligjore</span
+        >
+      </h1>
+      <br />
+      <!-- Search Bar -->
+      <div class="mb-6">
+        <input
+          id="law-search"
+          type="text"
+          placeholder="Kërko ligjin..."
+          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+        />
+      </div>
+      <!-- Laws List -->
+      <div id="laws-list" class="flex flex-col gap-6">
+        <!-- Example law item (repeat for each law) -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+              Ligji Nr. 1234/2020 për Mbrojtjen Sociale
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              Ky ligj përcakton masat për mbrojtjen sociale të individëve në
+              nevojë. Përfshin dispozita për ndihmë financiare, shërbime sociale
+              dhe mbështetje psikologjike.
+            </p>
+          </div>
+          <a
+            href="/pdfs/ligji-mbrojtja-sociale.pdf"
+            download
+            class="mt-4 md:mt-0 inline-block px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >Shkarko PDF</a
+          >
+        </div>
+        <!-- Add more law items here -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+              Ligji Nr. 5678/2021 për Barazinë Gjinore
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-2">
+              Ky ligj synon të promovojë barazinë gjinore dhe të parandalojë
+              diskriminimin në bazë të gjinisë në të gjitha fushat e jetës
+              shoqërore.
+            </p>
+          </div>
+          <a
+            href="/pdfs/ligji-barazia-gjinore.pdf"
+            download
+            class="mt-4 md:mt-0 inline-block px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >Shkarko PDF</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simple client-side search for demonstration
+      document
+        .getElementById("law-search")
+        .addEventListener("input", function (e) {
+          const query = e.target.value.toLowerCase();
+          document.querySelectorAll("#laws-list > div").forEach((div) => {
+            const text = div.innerText.toLowerCase();
+            div.style.display = text.includes(query) ? "" : "none";
+          });
+        });
+    </script>
+  </body>
+</html>

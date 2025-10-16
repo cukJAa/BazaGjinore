@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>Baza Gjinore</title>
+</head>
+
+<body>
+    <div class="grid grid-cols-[repeat(12,1fr)] grid-rows-[repeat(4,100px)_1fr_100px] gap-y-[10px] gap-x-[10px]">
+        <div class="col-1 col-span-full sticky top-0 z-20  ">
+            <h1
+                class=" mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                Organizata Kunder Dhunes Me Baze Gjinore
+            </h1>
+            <div>
+                <nav class="">
+                    <div class=" justify-center hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+                        <ul
+                            class="flex flex-col text-xl p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+                            </li>
+                            <li class="relative justify-self-end">
+                                <button id="langDropdownBtn" type="button"
+                                    class="flex items-center justify-between w-full py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Language
+                                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <ul id="langDropdownMenu"
+                                    class="absolute right-0 z-20 mt-2 w-32 bg-white rounded-md shadow-lg border border-gray-200 hidden dark:bg-gray-800">
+                                    <li>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                            onclick="setLanguage('al')">Shqip</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                            onclick="setLanguage('en')">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-gray-100 row-start-2 row-span-20 col-span-1">
+            Sidebar
+        </div>
+        <!-- <div class="row-start-2 col-start-4 col-span-6 sticky top-24 z-10">
+            <form class="w-full mx-auto ">
+                <label for="default-search"
+                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Search Mockups, Logos..." required />
+                    <button type="submit"
+                        class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div> -->
+        <div
+            class="row-start-2 row-span-20 col-start-11 col-span-2 sticky top-0 self-start z-10 grid gap-y-[10px] ">
+            <h2 class="text-4xl font-semibold text-gray-500 dark:text-gray-400">Blogu jone me keshilla</h2>
+
+            <div class="">
+                <a href="#" class="block p-2 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+                    <img src="./assets/pexels-kovyrina-1692984.jpg" alt="News 1" class="w-full h-24 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-l font-bold text-gray-800 dark:text-white mb-2">Titulli i Lajmit 1</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Pershkrimi shkurter i lajmit ose keshilles.
+                            <span class="text-blue-600 dark:text-blue-400 hover:underline">Lexo me shume</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="">
+                <a href="#" class="block p-2 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+                    <img src="./assets/pexels-kovyrina-1692984.jpg" alt="News 1" class="w-full h-24 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-l font-bold text-gray-800 dark:text-white mb-2">Titulli i Lajmit 1</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Pershkrimi shkurter i lajmit ose keshilles.
+                            <span class="text-blue-600 dark:text-blue-400 hover:underline">Lexo me shume</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="">
+                <a href="#" class="block p-2 rounded-lg shadow hover:shadow-lg transition bg-white dark:bg-gray-800">
+                    <img src="./assets/pexels-kovyrina-1692984.jpg" alt="News 1" class="w-full h-24 object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-l font-bold text-gray-800 dark:text-white mb-2">Titulli i Lajmit 1</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Pershkrimi shkurter i lajmit ose keshilles.
+                            <span class="text-blue-600 dark:text-blue-400 hover:underline">Lexo me shume</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row-span-4 col-start-2 col-span-8">
+            <h1 class="text-6xl font-extrabold dark:text-white">
+                Misioni Vizioni Qellimet
+            </h1>
+            <br />
+            <div class="flex gap-4">
+                <div class="">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                    are like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                </div>
+            </div>
+        </div>
+        <div class="row-start-7 row-span-4 col-start-2 col-span-8">
+            <h1 class="mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+                Ligjet dhe &nbsp<span class="underline underline-offset-1 decoration-4 decoration-blue-300">
+                    informacionet ligjore</span>
+            </h1>
+            <br />
+            <div class="laws-section  flex flex-col gap-4">
+                <div>
+                    <input id="law-search" type="text" placeholder="Kërko ligjin..."
+                        class="search-input w-full p-3 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" />
+                </div>
+                <div id="laws-carousel-window">
+                    <div class="laws-carousel-track">
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                            Ligji Nr. 1234/2020 për Mbrojtjen Sociale
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-2">
+                            Ky ligj përcakton masat për mbrojtjen sociale të individëve në
+                            nevojë. Përfshin dispozita për ndihmë financiare, shërbime sociale
+                            dhe mbështetje psikologjike.
+                        </p>
+                        <a href="/pdfs/ligji-mbrojtja-sociale.pdf" download
+                            class="text-blue-600 dark:text-blue-400 hover:underline transition">Shkarko
+                            PDF</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row-start-11 row-span-4 col-start-2 col-span-8 mt-10">
+            <h1 class="text-5xl font-extrabold dark:text-white">
+                Si te ndihmoni Organizaten
+            </h1>
+            <br />
+
+            <h2 class="text-4xl font-semibold text-gray-500 dark:text-gray-400">Ndihme Profesionale</h2>
+            <div class="flex gap-4">
+                <div class="flex flex-col flex-1 gap-4">
+                    <p>
+                        Dhuna përkufizohet nga Organizata Botërore e Shëndetësisë si
+                        "përdorim i vullnetshëm i forcës a fuqisë fizike, si kërcënim ose e aplikuar,
+                        kundrejt një tjetri, person ose komunitet duke pasur me gjasë rezultate ose mundësi në dëmtime,
+                        vdekje, pasoja psikologjike, keqzhvillim, ose pamundësi",
+                        megjithëse grupi është i vetëdijshëm që përfshirja e "përdorimit të forcës" në përkufizimin e
+                        vet shtrihet përmbi kuptimit konvencional të fjalës[1].Siç shpesh justifikohet duke e quajtur
+                        instinkt natyror dhe kusht për dominim dhe afirmim e Uni-it mbi tjetrin e pra,
+                        kusht i ekzistencës fizike, nuk mund të lejojmë që ky instinkt të mbisundojë akoma në jetën
+                        shoqërore. Pulsione të tilla janë, që me daljen e njeriut nga
+                    </p>
+                    <p>
+                        Policia e shtetit <br>
+                        Ambulanca <br>
+                        Spitale <br>
+                        Qendra sociale <br>
+                        Qendra psikologjike <br>
+                        Avokat <br>
+                        Linja e emergjencës ---- 112 <br>
+                        Linja e emergjencës ---- 129 <br>
+
+
+                    </p>
+                </div>
+                <div class="flex-1">
+                    <iframe
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1XkJZ7JClzb-PsvCVvotsf5wX1Su5dsM&ehbc=2E312F&noprof=1"
+                        class="w-full h-full"></iframe>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row-start-15 row-span-4 col-start-2 col-span-8 mt-10">
+            <h1 class="text-5xl font-extrabold dark:text-white">
+                Formular Raportimi Anonim
+            </h1>
+            <br />
+            <div class="flex gap-4">
+                <div class="flex-1/3">
+                    Ketu mund te na dergoni raportin tuaj ne menyre anonime. Nuk do tju kerkojme asnje te dhene personale dhe
+                    nuk do te ruhet asnje e dhene personale ose qe ju mund te dergoni.
+                    Ne do te perpiqemi te ju ndihmojme sa me shpejt.
+                </div>
+                <div class="flex-1/3">
+                    <form action="">
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ketu
+                            mund tshkruani raportin tuaj ne menyre anonime </label>
+                        <textarea id="message" rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Shkruaj raportin tend"></textarea>
+                        <div>
+                            <label class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="file_input">Upload file</label>
+                            <input
+                                class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                id="default_size" type="file">
+                            <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
+                                SVG, PNG, JPG or GIF (MAX. 800x400px).
+                            </p>
+                        </div>
+                        <button type="submit"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    </form>
+                </div>
+                <div class="flex-1/3">
+                    <video controls class="w-full h-full">
+                        <source src="/shared-assets/videos/flower.webm" type="video/webm" />
+
+                        <source src="/shared-assets/videos/flower.mp4" type="video/mp4" />
+                </div>
+            </div>
+        </div>
+        <div class="row-start-19 col-start-2 col-span-9 mt-10">
+            <h1 class="text-4xl">Footer</h1>
+            <div class="flex gap-4">
+                <div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a ty
+                </div>
+                <div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, whk. It has survived not
+                    only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./javascript.js"></script>
+
+</html>

@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 1fr 100px;
+  gap: 10px 10px;
+}
+
+.item:nth-child(1),
+.item:nth-child(6) {
+  grid-column: 1 / -1;
+}
+
+.item:nth-child(2) {
+  grid-row: 2 / 4;
+  grid-column: 1 / 4;
+}
+
+.item:nth-child(3) {
+  grid-column: 4 / 10;
+}
+
+.item:nth-child(4) {
+  grid-row: 2 / 4;
+  grid-column: 10 / 13;
+}
+
+.item:nth-child(5) {
+  grid-column: 4 / 10;
+  grid-row: 3 / 4;
+}
+
+
+#laws-carousel-window {
+  /* This container hides the laws that are not currently visible */
+  overflow: hidden;
+  /* Set a height that fits 3 items. You may need to adjust this value. */
+  height: 600px; 
+}
+
+.laws-carousel-track {
+  /* This tells the browser to animate any changes to the 'transform' property */
+  transition: transform 0.5s ease-in-out;
+}
